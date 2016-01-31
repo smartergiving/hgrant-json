@@ -1,0 +1,94 @@
+{
+  "hGrant-REQUIRED": {
+    "grantor_vcard": {
+      "fn_org-REQUIRED": {},
+      "adr": {
+        "street_address": {},
+        "extended_address": {},
+        "post_office_box": {},
+        "locality-REQUIRED": {},
+        "region-REQUIRED": {},
+        "postal_code": {},
+        "country_name-REQUIRED":{}
+      },  
+      "tel": {},
+      "email": {},
+      "url": {},
+      "grantor_EIN": {}
+    },
+    "grantee_vcard-REQUIRED": {
+      "org_fn": {},
+      "adr": {
+        "street_address": {},
+        "extended_address": {},
+        "post_office_box": {},
+        "locality-REQUIRED": {},
+        "region-REQUIRED": {},
+        "postal_code": {},
+        "country_name-REQUIRED": {}
+      },
+      "tel": {},
+      "email": {},
+      "url": {}   
+    },
+    "grant_id-REQUIRED": {},
+    "title": {},
+    "description-REQUIRED": {},
+    "amount-REQUIRED": {
+      "currency": {},
+      "amount-REQUIRED": {},
+      "period-REQUIRED": {
+        "dtstart-REQUIRED": {},
+        "dtend-REQUIRED": {}
+      }  
+    },
+    "fiscal_year_end-REQUIRED": {},
+    "grantee_unit": {},
+    "grantee_EIN": {},
+    "grantee_aka": {},
+    "grantee_dba": {},
+    "grantee_fka": {},
+    "grantee_type": {},
+    "grantee_population_group": {},
+    "duration_year-REQUIRED": {},
+    "duration_month-REQUIRED": {},
+    "grant_activity-REQUIRED": {},
+    "grant_population_group": {},
+    "grant_population_area-REQUIRED": {},
+    "grant_support_type": {},
+    "strategy": {},
+    "initiative": {},
+    "theme": {},
+    "grant_outcome": {},
+    "grant_outputs": {},
+    "challenge_grant": {},
+    "matching_grant": {},
+    "continuing_support_grant": {},
+    "fiscal_agent": {},
+    "shared_grant": {},
+    "fund_name": {},
+    "fund_type": {},
+    "fund_subtype": {},
+    "geo_focus": {
+      "continent": {},
+      "inter_country_region": {},
+      "country": {},
+      "intra_country_region": {},
+      "intra_state_region": {},
+      "state": {},
+      "country": {},
+      "city": {},
+      "neighborhood": {}
+    },  
+    "allocation": {
+      "allocation_currency": {},
+      "allocation_amount": {},
+      "allocation_percent": {},
+      "allocation_type": {
+        "allocation_area": {},
+        "allocation_subject": {}
+      }  
+    },
+    "IATI_flag": {}
+  }
+}
