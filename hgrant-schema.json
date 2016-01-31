@@ -16,15 +16,29 @@
       "formatting_notes": {
         "html_class_name": "hgrant"
       },
+      "required": [
+        "grantee_vcard",
+        "grant_id",
+        "description",
+        "amount",
+        "fiscal_year_end",
+        "TODO duration_year OR duration_month",
+        "grant_activity",
+        "grant_population_area",
+        "grant_program_area"
+      ],
       "properties": {
         "grantor_vcard": {
           "type": "object",
-          "description": "No data should be related to this element. ",
+          "description": "No data should be related to this element.",
           "formatting_notes": {
             "html_class_name": "grantee_vcard"
           },
+          "required": [
+            "fn_org"
+          ],
           "properties": {
-            "fn_org-REQUIRED": {
+            "fn_org": {
               "type": "string",
               "description": "Full legal name of grantor as registered with IRS or international equivalent.",
               "formatting_notes": {
@@ -37,6 +51,11 @@
               "formatting_notes": {
                 "html_class_name": "adr"
               },
+              "required": [
+                "locality",
+                "region",
+                "country_name"
+              ],
               "properties": {
                 "street_address": {
                   "type": "string",
@@ -59,14 +78,14 @@
                     "html_class_name": "post-office-box"
                   }
                 },
-                "locality-REQUIRED": {
+                "locality": {
                   "type": "string",
                   "description": "Refers to the city for domestic and equivalent for international addresses.",
                   "formatting_notes": {
                     "html_class_name": "locality"
                   }
                 },
-                "region-REQUIRED": {
+                "region": {
                   "type": "string",
                   "description": "Refers to the state for domestic and equivalent for international addresses. Two letter abbreviation for U.S. grantor state or full text for comparable administrative division (state, province, territory, etc.) of international grantor to assist in accurate mapping.",
                   "formatting_notes": {
@@ -80,7 +99,7 @@
                     "html_class_name": "postal-code"
                   }
                 },
-                "country_name-REQUIRED": {
+                "country_name": {
                   "type": "string",
                   "description": "Country name is required for international grantmakers",
                   "formatting_notes": {
@@ -119,12 +138,16 @@
             }
           }
         },
-        "grantee_vcard-REQUIRED": {
+        "grantee_vcard": {
           "type": "object",
           "description": "No data should be related to this element. ",
           "formatting_notes": {
             "html_class_name": "grantee_vcard"
           },
+          "required": [
+            "org_fn",
+            "adr"
+          ],
           "properties": {
             "org_fn": {
               "type": "string",
@@ -139,6 +162,11 @@
               "formatting_notes": {
                 "html_class_name": "adr"
               },
+              "required": [
+                "locality",
+                "region",
+                "country_name"
+              ],
               "properties": {
                 "street_address": {
                   "type": "string",
@@ -161,14 +189,14 @@
                     "html_class_name": "post-office-box"
                   }
                 },
-                "locality-REQUIRED": {
+                "locality": {
                   "type": "string",
                   "description": "Refers to the city for domestic and equivalent for international addresses.",
                   "formatting_notes": {
                     "html_class_name": "locality"
                   }
                 },
-                "region-REQUIRED": {
+                "region": {
                   "type": "string",
                   "description": "Refers to the state for domestic and equivalent for international addresses. Two letter abbreviation for U.S. grantor state or full text for comparable administrative division (state, province, territory, etc.) of international grantor to assist in accurate mapping.",
                   "formatting_notes": {
@@ -182,7 +210,7 @@
                     "html_class_name": "postal-code"
                   }
                 },
-                "country_name-REQUIRED": {
+                "country_name": {
                   "type": "string",
                   "description": "Country name is required for international recipients. It is optional for U.S. organizations.",
                   "formatting_notes": {
@@ -214,7 +242,7 @@
             }
           }  
         },
-        "grant_id-REQUIRED": {
+        "grant_id": {
           "type": "string",
           "description": "Unique ID supplied by grantor used to identify grant. This may be alpha, numeric, or alphanumeric data.",
           "formatting_notes": {
@@ -228,19 +256,23 @@
             "html_class_name": "title"
           }
         },
-        "description-REQUIRED": {
+        "description": {
           "type": "string",
           "description": "Summarizes the specific purpose or objective of the grant.",
           "formatting_notes": {
             "html_class_name": "description"
           }
         },
-        "amount-REQUIRED": {
+        "amount": {
           "type": "object",
           "description": "No data should be related to this element. It should only serve as a title field or indication of blocklevel for amount elements.",
           "formatting_notes": {
             "html_class_name": "amount"
           },
+          "required": [
+            "amount",
+            "period"
+          ],
           "properties": {
             "currency": {
               "type": "string",
@@ -249,7 +281,7 @@
                 "html_class_name": "currency"
               }
             },
-            "amount-REQUIRED": {
+            "amount": {
               "type": "string",
               "description": "Please provide the full value Paid or Authorized for the grant. Subclass entry should have no punctuation in coding. ",
               "formatting_notes": {
@@ -257,21 +289,25 @@
                 "html_attribute": "title"
               }
             },
-            "period-REQUIRED": {
+            "period": {
               "type": "object",
               "description": "No data should be related to this element. It should only serve as a title field for grant period start and end date elements.",
               "formatting_notes": {
                 "html_class_name": "period"
               },
+              "required": [
+                "dtstart",
+                "dtend"
+              ],
               "properties": {
-                "dtstart-REQUIRED": {
+                "dtstart": {
                   "type": "string",
                   "description": "Start date for grant. Please format as mm/dd/yy or Month, Day, Year. Title must be formatted as yyyymmdd.",
                   "formatting_notes": {
                     "html_class_name": "dtstart"
                   }
                 },
-                "dtend-REQUIRED": {
+                "dtend": {
                   "type": "string",
                   "description": "End date for grant. Please format as mm/dd/yy or Month, Day, Year. Title must be formatted as yyyymmdd.",
                   "formatting_notes": {
@@ -282,7 +318,7 @@
             }
           }
         },
-        "fiscal_year_end-REQUIRED": {
+        "fiscal_year_end": {
           "type": "string",
           "description": "The Fiscal Year End Date must be consistent for all grants made in the same fiscal year. Please format as mm/dd/yy or Month, Day, Year. Four digit year will also be accepted. Please remember that you must be consistent in providing either all Paid or all Authorized grants as part of your feed to avoid duplications in Foundation Center records.",
           "formatting_notes": {
@@ -338,21 +374,21 @@
             "html_class_name": "grantee_population_group"
           }
         },
-        "duration_year-REQUIRED": {
+        "duration_year": {
           "type": "string",
           "description": "Duration of funding at the time the grant was awarded, expressed in years. Not required if duration is provided in months",
           "formatting_notes": {
             "html_class_name": "duration_year"
           }
         },
-        "duration_month-REQUIRED": {
+        "duration_month": {
           "type": "string",
           "description": "Duration of funding at the time the grant was awarded, expressed in months. Not required if duration is provided in years.",
           "formatting_notes": {
             "html_class_name": "duration_month"
           }
         },
-        "grant_activity-REQUIRED": {
+        "grant_activity": {
           "type": "string",
           "description": "Specific field(s) of activity or primary subject terms used by the grantmaker to categorize the grant. Please refer to the alpha list of 26 major field areas used by the Foundation Center: foundationcenter.org/ntee/",
           "formatting_notes": {
@@ -366,14 +402,14 @@
             "html_class_name": "grant_population_group"
           }
         },
-        "grant_population_area-REQUIRED": {
+        "grant_population_area": {
           "type": "string",
           "description": "Specific population groups served by the grant. Groups may be identified by gender, age, race and ethnicity, disabilities, etc.",
           "formatting_notes": {
             "html_class_name": "grant_population_area"
           }
         },
-        "grant_program_area-REQUIRED": {
+        "grant_program_area": {
           "type": "string",
           "description": "Specific program area name used by the grantmaker to categorize the grant. Grant program area is not required if grant activity is supplied.",
           "formatting_notes": {
