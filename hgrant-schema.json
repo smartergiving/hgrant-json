@@ -1,0 +1,659 @@
+{
+  "title": "JSON schema for the hGrant spec",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://github.com/smartergiving/hgrant-json",
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "hgrant"
+  ],
+
+  "properties": {
+    "hGrant": {
+      "type": "object",
+      "description": "Each grant entry in your feed must begin with a <div class=\"hgrant\"> entry; not one entry for each feed.",
+      "formatting_notes": {
+        "html_class_name": "hgrant"
+      },
+      "items": {
+        "type": "object",
+        "properties": {
+          "grantor_vcard": {
+            "type": "array",
+            "description": "No data should be related to this element. ",
+            "formatting_notes": {
+              "html_class_name": "grantee_vcard"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "fn_org-REQUIRED": {
+                  "type": "string",
+                  "description": "Full legal name of grantor as registered with IRS or international equivalent.",
+                  "formatting_notes": {
+                    "html_class_name": "fn org"
+                  }
+                },
+                "adr": {
+                  "type": "array",
+                  "description": "No data should be related to this element. It should only serve as a title field or indication of blocklevel for address elements.",
+                  "formatting_notes": {
+                    "html_class_name": "adr"
+                  },
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "street_address": {
+                        "type": "string",
+                        "description": "Primary address information for grantor.",
+                        "formatting_notes": {
+                          "html_class_name": "street-address"
+                        }
+                      },
+                      "extended_address": {
+                        "type": "string",
+                        "description": "Secondary address information, such as floor, department name, building name, etc.",
+                        "formatting_notes": {
+                          "html_class_name": "extended-address"
+                        }
+                      },
+                      "post_office_box": {
+                        "type": "string",
+                        "description": "",
+                        "formatting_notes": {
+                          "html_class_name": "post-office-box"
+                        }
+                      },
+                      "locality-REQUIRED": {
+                        "type": "string",
+                        "description": "Refers to the city for domestic and equivalent for international addresses.",
+                        "formatting_notes": {
+                          "html_class_name": "locality"
+                        }
+                      },
+                      "region-REQUIRED": {
+                        "type": "string",
+                        "description": "Refers to the state for domestic and equivalent for international addresses. Two letter abbreviation for U.S. grantor state or full text for comparable administrative division (state, province, territory, etc.) of international grantor to assist in accurate mapping.",
+                        "formatting_notes": {
+                          "html_class_name": "region"
+                        }
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "description": "Refers to the zip code for domestic and equivalent for international addresses. ",
+                        "formatting_notes": {
+                          "html_class_name": "postal-code"
+                        }
+                      },
+                      "country_name-REQUIRED": {
+                        "type": "string",
+                        "description": "Country name is required for international grantmakers",
+                        "formatting_notes": {
+                          "html_class_name": "country-name"
+                        }
+                      }
+                    }
+                  }
+                },
+                "tel": {
+                  "type": "string",
+                  "description": "Do not include parentheses in phone numbers. Domestic numbers should be formatted: 123 4567890. International numbers should be formatted with prefix 011 or +11, a space, and then all remaining digits.",
+                  "formatting_notes": {
+                    "html_class_name": "tel"
+                  }
+                },
+                "email": {
+                  "type": "string",
+                  "description": "General contact email for grantor.",
+                  "formatting_notes": {
+                    "html_class_name": "email"
+                  }
+                },
+                "url": {
+                  "type": "string",
+                  "description": "Grantor's URL - this must be a hyperlink.",
+                  "formatting_notes": {
+                    "html_class_name": "url"
+                  }
+                },
+                "grantor_EIN": {
+                  "type": "string",
+                  "description": "Grantor's EIN or foreign equivalent. ",
+                  "formatting_notes": {
+                    "html_class_name": "grantor_EIN"
+                  }
+                }
+              }
+            }
+          },
+          "grantee_vcard-REQUIRED": {
+            "type": "array",
+            "description": "No data should be related to this element. ",
+            "formatting_notes": {
+              "html_class_name": "grantee_vcard"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "org_fn": {
+                  "type": "array",
+                  "description": "Full legal name of grantee as registered with IRS or international equivalent.",
+                  "formatting_notes": {
+                    "html_class_name": "org fn"
+                  }
+                },
+                "adr": {
+                  "type": "array",
+                  "description": "No data should be related to this element. It should only serve as a title field or indication of blocklevel for address elements.",
+                  "formatting_notes": {
+                    "html_class_name": "adr"
+                  },
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "street_address": {
+                        "type": "string",
+                        "description": "Primary address information for grantor.",
+                        "formatting_notes": {
+                          "html_class_name": "street-address"
+                        }
+                      },
+                      "extended_address": {
+                        "type": "string",
+                        "description": "Secondary address information, such as floor, department name, building name, etc.",
+                        "formatting_notes": {
+                          "html_class_name": "extended-address"
+                        }
+                      },
+                      "post_office_box": {
+                        "type": "string",
+                        "description": "",
+                        "formatting_notes": {
+                          "html_class_name": "post-office-box"
+                        }
+                      },
+                      "locality-REQUIRED": {
+                        "type": "string",
+                        "description": "Refers to the city for domestic and equivalent for international addresses.",
+                        "formatting_notes": {
+                          "html_class_name": "locality"
+                        }
+                      },
+                      "region-REQUIRED": {
+                        "type": "string",
+                        "description": "Refers to the state for domestic and equivalent for international addresses. Two letter abbreviation for U.S. grantor state or full text for comparable administrative division (state, province, territory, etc.) of international grantor to assist in accurate mapping.",
+                        "formatting_notes": {
+                          "html_class_name": "region"
+                        }
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "description": "Refers to the zip code for domestic and equivalent for international addresses. ",
+                        "formatting_notes": {
+                          "html_class_name": "postal-code"
+                        }
+                      },
+                      "country_name-REQUIRED": {
+                        "type": "string",
+                        "description": "Country name is required for international recipients. It is optional for U.S. organizations.",
+                        "formatting_notes": {
+                          "html_class_name": "country-name"
+                        }
+                      }
+                    }
+                  }
+                },
+                "tel": {
+                  "type": "string",
+                  "description": "Do not include parentheses in phone numbers. Domestic numbers should be formatted: 123 4567890. International numbers should be formatted with prefix 011 or +11, a space, and then all remaining digits.",
+                  "formatting_notes": {
+                    "html_class_name": "tel"
+                  }
+                },
+                "email": {
+                  "type": "string",
+                  "description": "General contact email for grantee.",
+                  "formatting_notes": {
+                    "html_class_name": "email"
+                  }
+                },
+                "url": {
+                  "type": "string",
+                  "description": "Grantee's URL - this must be a hyperlink.",
+                  "formatting_notes": {
+                    "html_class_name": "url"
+                  }
+                }
+              }
+            }
+          },
+          "grant_id-REQUIRED": {
+            "type": "string",
+            "description": "Unique ID supplied by grantor used to identify grant. This may be alpha, numeric, or alphanumeric data.",
+            "formatting_notes": {
+              "html_class_name": "grant_id"
+            }
+          },
+          "title": {
+            "type": "string",
+            "description": "Refers to short descriptive title for grant",
+            "formatting_notes": {
+              "html_class_name": "title"
+            }
+          },
+          "description-REQUIRED": {
+            "type": "string",
+            "description": "Summarizes the specific purpose or objective of the grant.",
+            "formatting_notes": {
+              "html_class_name": "description"
+            }
+          },
+          "amount-REQUIRED": {
+            "type": "array",
+            "description": "No data should be related to this element. It should only serve as a title field or indication of blocklevel for amount elements.",
+            "formatting_notes": {
+              "html_class_name": "amount"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "currency": {
+                  "type": "string",
+                  "description": "No data should be related to this element. It should only serve as a title field or indication of blocklevel for amount elements.",
+                  "formatting_notes": {
+                    "html_class_name": "currency"
+                  }
+                },
+                "amount-REQUIRED": {
+                  "type": "string",
+                  "description": "Please provide the full value Paid or Authorized for the grant. Subclass entry should have no punctuation in coding. ",
+                  "formatting_notes": {
+                    "html_class_name": "amount",
+                    "html_attribute": "title"
+                  }
+                },
+                "period-REQUIRED": {
+                  "type": "array",
+                  "description": "No data should be related to this element. It should only serve as a title field for grant period start and end date elements.",
+                  "formatting_notes": {
+                    "html_class_name": "period"
+                  },
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "dtstart-REQUIRED": {
+                        "type": "string",
+                        "description": "Start date for grant. Please format as mm/dd/yy or Month, Day, Year. Title must be formatted as yyyymmdd.",
+                        "formatting_notes": {
+                          "html_class_name": "dtstart"
+                        }
+                      },
+                      "dtend-REQUIRED": {
+                        "type": "string",
+                        "description": "End date for grant. Please format as mm/dd/yy or Month, Day, Year. Title must be formatted as yyyymmdd.",
+                        "formatting_notes": {
+                          "html_class_name": "dtend"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "fiscal_year_end-REQUIRED": {
+            "type": "string",
+            "description": "The Fiscal Year End Date must be consistent for all grants made in the same fiscal year. Please format as mm/dd/yy or Month, Day, Year. Four digit year will also be accepted. Please remember that you must be consistent in providing either all Paid or all Authorized grants as part of your feed to avoid duplications in Foundation Center records.",
+            "formatting_notes": {
+              "html_class_name": "fiscal_year_end"
+            }
+          },
+          "grantee_unit": {
+            "type": "string",
+            "description": "Subdivision or department of grantee to which grant was awarded.",
+            "formatting_notes": {
+              "html_class_name": "grantee_unit"
+            }
+          },
+          "grantee_EIN": {
+            "type": "string",
+            "description": "Grantee's EIN or international equivalent.",
+            "formatting_notes": {
+              "html_class_name": "grantee_EIN"
+            }
+          },
+          "grantee_aka": {
+            "type": "string",
+            "description": "Also Known As name for grantee organization.",
+            "formatting_notes": {
+              "html_class_name": "grantee_aka"
+            }
+          },
+          "grantee_dba": {
+            "type": "string",
+            "description": "Doing Business As name for grantee organization.",
+            "formatting_notes": {
+              "html_class_name": "grantee_dba"
+            }
+          },
+          "grantee_fka": {
+            "type": "string",
+            "description": "Formerly Known As name for grantee organization.",
+            "formatting_notes": {
+              "html_class_name": "grantee_fka"
+            }
+          },
+          "grantee_type": {
+            "type": "string",
+            "description": "Brief description of grantee's field/purpose or NTEE coding if available. Please refer to the alpha list of 26 major field areas used by the Foundation Center: foundationcenter.org/ntee",
+            "formatting_notes": {
+              "html_class_name": "grantee_type"
+            }
+          },
+          "grantee_population_group": {
+            "type": "string",
+            "description": "Primary population groups served by the grantee as part of their ongoing mission. Groups may be identified by gender, age, race and ethnicity, disabilities, etc. This does not represent the specific population served by the grant; see grant_population_group for that information.",
+            "formatting_notes": {
+              "html_class_name": "grantee_population_group"
+            }
+          },
+          "duration_year-REQUIRED": {
+            "type": "string",
+            "description": "Duration of funding at the time the grant was awarded, expressed in years. Not required if duration is provided in months",
+            "formatting_notes": {
+              "html_class_name": "duration_year"
+            }
+          },
+          "duration_month-REQUIRED": {
+            "type": "string",
+            "description": "Duration of funding at the time the grant was awarded, expressed in months. Not required if duration is provided in years.",
+            "formatting_notes": {
+              "html_class_name": "duration_month"
+            }
+          },
+          "grant_activity-REQUIRED": {
+            "type": "string",
+            "description": "Specific field(s) of activity or primary subject terms used by the grantmaker to categorize the grant. Please refer to the alpha list of 26 major field areas used by the Foundation Center: foundationcenter.org/ntee/",
+            "formatting_notes": {
+              "html_class_name": "grant_activity"
+            }
+          },
+          "grant_population_group": {
+            "type": "string",
+            "description": "Specific population groups served by the grant. Groups may be identified by gender, age, race and ethnicity, disabilities, etc. ",
+            "formatting_notes": {
+              "html_class_name": "grant_population_group"
+            }
+          },
+          "grant_population_area-REQUIRED": {
+            "type": "string",
+            "description": "Specific population groups served by the grant. Groups may be identified by gender, age, race and ethnicity, disabilities, etc.",
+            "formatting_notes": {
+              "html_class_name": "grant_population_area"
+            }
+          },
+          "grant_program_area-REQUIRED": {
+            "type": "string",
+            "description": "Specific program area name used by the grantmaker to categorize the grant. Grant program area is not required if grant activity is supplied.",
+            "formatting_notes": {
+              "html_class_name": "grant_program_area"
+            }
+          },
+          "grant_support_type": {
+            "type": "string",
+            "description": "Brief description of the type of support. Examples include: General Operating Support, Annual Campaign, Student Aid",
+            "formatting_notes": {
+              "html_class_name": "grant_support_type"
+            }
+          },
+          "strategy": {
+            "type": "string",
+            "description": "Field may be formatted as free text or tags and taxonomy elements separated by semicolons.",
+            "formatting_notes": {
+              "html_class_name": "strategy"
+            }
+          },
+          "initiative": {
+            "type": "string",
+            "description": "Field may be formatted as free text or tags and taxonomy elements separated by semicolons.",
+            "formatting_notes": {
+              "html_class_name": "initiative"
+            }
+          },
+          "theme": {
+            "type": "string",
+            "description": "Field may be formatted as free text or tags and taxonomy elements separated by semicolons.",
+            "formatting_notes": {
+              "html_class_name": "theme"
+            }
+          },
+          "grant_outcome": {
+            "type": "string",
+            "description": "To be added to grant record as an update based on reports received from grantee. Grant_id field must be provided for Foundation Center to capture updates and not create duplicate grant entries with new reporting information.",
+            "formatting_notes": {
+              "html_class_name": "grant_outcome"
+            }
+          },
+          "grant_outputs": {
+            "type": "string",
+            "description": "To be added to grant record as an update based on reports received from grantee. Grant_id field must be provided for Foundation Center to capture updates and not create duplicate grant entries with new reporting information. ",
+            "formatting_notes": {
+              "html_class_name": "grant_outputs"
+            }
+          },
+          "challenge_grant": {
+            "type": "boolean",
+            "description": "If grant is a challenge grant, please indicate \"Y\" or \"Yes.\"",
+            "formatting_notes": {
+              "html_class_name": "challenge_grant"
+            }
+          },
+          "matching_grant": {
+            "type": "boolean",
+            "description": "If grant is a matching grant, please indicate \"Y\" or \"Yes.\"",
+            "formatting_notes": {
+              "html_class_name": "matching_grant"
+            }
+          },
+          "continuing_support_grant": {
+            "type": "boolean",
+            "description": "If grant is for continuing support or a grant renewal please indicate \"Y\" or \"Yes.\"",
+            "formatting_notes": {
+              "html_class_name": "continuing_support_grant"
+            }
+          },
+          "fiscal_agent": {
+            "type": "string",
+            "description": "If grant was made through a fiscal agent/sponsor, please indicate organization's name.",
+            "formatting_notes": {
+              "html_class_name": "fiscal_agent"
+            }
+          },
+          "shared_grant": {
+            "type": "string",
+            "description": "If grant was shared with one or more other grantee(s), please indicate name(s) of other organization(s).",
+            "formatting_notes": {
+              "html_class_name": "shared_grant"
+            }
+          },
+          "fund_name": {
+            "type": "string",
+            "description": "For grants made from a fund for which you would like to supply the specific fund name.",
+            "formatting_notes": {
+              "html_class_name": "fund_name"
+            }
+          },
+          "fund_type": {
+            "type": "string",
+            "description": "Indicates the type of fund grant was awarded from at a public charity or community foundation. Examples include: Donor Advised Fund, Giving Circle, Field of Interest, Supporting Organization, etc.",
+            "formatting_notes": {
+              "html_class_name": "fund_type"
+            }
+          },
+          "fund_subtype": {
+            "type": "string",
+            "description": "For public charities and community foundations, this indicates if the grant was made from unrestricted, temporarily restricted, or permanently restricted funds.",
+            "formatting_notes": {
+              "html_class_name": "fund_subtype"
+            }
+          },
+          "geo_focus": {
+            "type": "array",
+            "description": "No data should be related to this element. It should only serve as a title field or indication of blocklevel for amount elements. Please note, only grants coded to the Foundation Center's GeoTree standard (geotree.foundationcenter.org) will appear on the Glasspockets.org Geographic Area Served Funding Map. See footnote below for geocoding element requirements",
+            "formatting_notes": {
+              "html_class_name": "geo-focus"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "continent": {
+                  "type": "string",
+                  "description": "Refers to grants supporting projects or initiatives that impact the majority of the continent. For example, a grant funding access to education for children in Africa would be coded with Africa.",
+                  "formatting_notes": {
+                    "html_class_name": "continent"
+                  }
+                },
+                "inter_country_region": {
+                  "type": "string",
+                  "description": "Refers to a group of countries commonly recognized as a geographic grouping by name (e.g., Caribbean or North Africa).",
+                  "formatting_notes": {
+                    "html_class_name": "inter_country_region"
+                  }
+                },
+                "country": {
+                  "type": "string",
+                  "description": "Grants serving multiple countries should have multiple elements provided; country names should not be grouped in one line and be separated by commas or semicolons. ",
+                  "formatting_notes": {
+                    "html_class_name": "country"
+                  }
+                },
+                "intra_country_region": {
+                  "type": "string",
+                  "description": "Refers to an area within a country's borders that includes multiple states or first administrative division equivalents.",
+                  "formatting_notes": {
+                    "html_class_name": "intra_country_region"
+                  }
+                },
+                "intra_state_region": {
+                  "type": "string",
+                  "description": "Refers to an area within a state's borders that includes multiple counties or cities.",
+                  "formatting_notes": {
+                    "html_class_name": "intra_state_region"
+                  }
+                },
+                "state": {
+                  "type": "string",
+                  "description": "Refers to state for domestic and equivalent first administrative division (e.g., state, province, territory) for international locations. Please provide full text for international locations; two letter abbreviations may be supplied for U.S. locations.",
+                  "formatting_notes": {
+                    "html_class_name": "state"
+                  }
+                },
+                "county": {
+                  "type": "string",
+                  "description": "Refers to county for domestic and equivalent second administrative division for international locations (e.g., municipality or district).",
+                  "formatting_notes": {
+                    "html_class_name": "county"
+                  }
+                },
+                "city": {
+                  "type": "string",
+                  "description": "Refers to city, town, township, etc. for domestic and equivalent for international grants.",
+                  "formatting_notes": {
+                    "html_class_name": "city"
+                  }
+                },
+                "neighborhood": {
+                  "type": "string",
+                  "description": "Refers to a commonly recognized, and clearly defined, area in a city or town. ",
+                  "formatting_notes": {
+                    "html_class_name": "neighborhood"
+                  }
+                }
+              }
+            }
+          },
+          "allocation": {
+            "type": "array",
+            "description": "Refers to percent or dollar allocation by location for grants with multiple Geographic Area Served locations. Grants that are designated for one location do not need allocation notes. Allocations can be assigned by dollar amount or percentage. Foundation Center prefers to receive percentage allocations, which must reconcile to 100%. No data should be related to this element. It should only serve as a title field or indication of blocklevel for amount elements.",
+            "formatting_notes": {
+              "html_class_name": "allocation"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "allocation_currency": {
+                  "type": "number",
+                  "description": "For allocations Paid or Authorized in local currency outside of the U.S., please indicate currency type and use appropriate currency symbol.",
+                  "formatting_notes": {
+                    "html_class_name": "allocation_currency",
+                    "html_attribute": "title"
+                  }
+                },
+                "allocation_amount": {
+                  "type": "number",
+                  "description": "Specific amount designated for Geographic Area Served.",
+                  "formatting_notes": {
+                    "html_class_name": "allocation_amount",
+                    "html_attribute": "title"
+                  }
+                },
+                "allocation_percent": {
+                  "type": "integer",
+                  "description": "Specific percentage of total grant award designated for Geographic Area Served. ",
+                  "formatting_notes": {
+                    "html_class_name": "allocation_percent"
+                  }
+                },
+                "allocation_type": {
+                  "type": "array",
+                  "description": "Indicates if Geographic Area is for location being served by the grant or subject of activity. For example, funds designated to serve a community center in Flint, Michigan versus the Asian Art Collection at the Metropolitan Museum of Art. No data should be related to this element.",
+                  "formatting_notes": {
+                    "html_class_name": "allocation_type"
+                  },
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "allocation_area": {
+                        "type": "string",
+                        "description": "",
+                        "formatting_notes": {
+                          "html_class_name": "allocation_area"
+                        }
+                      },
+                      "allocation_subject": {
+                        "type": "string",
+                        "description": "",
+                        "formatting_notes": {
+                          "html_class_name": "allocation_subject"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "IATI_flag": {
+            "type": "boolean",
+            "description": "This field should be used to indicate if you would like the Foundation Center to include your grant in the registry provided to The International Aid Transparency Initiative (IATI), aidtransparency.net, by the Foundation Center. The JSON schema requires boolean, though hGrant spec suggests indicating yes (y) or no (n) on a grant by grant basis. Files received with all blanks or no indication will not be included in the registry. Indicators for IATI will not be displayed in grant details on Glasspockets.org.",
+            "formatting_notes": {
+              "html_class_name": "IATI_flag"
+            }
+          },
+          "template_array": {
+            "type": "array",
+            "description": "",
+            "formatting_notes": {
+              "html_class_name": ""
+            },
+            "items": {
+              "type": "object",
+              "properties": { }
+            }
+          }
+        }
+      }
+    }
+  }
+}
