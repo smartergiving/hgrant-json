@@ -1,0 +1,35 @@
+{
+  "hgrant": {
+    "grantor_vcard": {
+        "fn_org": "",
+        "adr": {
+          "locality": "",
+          "region": "",
+          "country_name": ""
+        }
+      },
+    "grantee_vcard": {
+      "org_fn": "",
+      "adr": {
+        "locality": "",
+        "region": "",
+        "country_name": ""
+      }
+    },
+    "grant_id": "",
+    "description": "",
+    "amount": {
+      "amount": 123,
+      "period": {
+        "dtstart": "01/01/2016",
+        "dtstart_title": "20160101",
+        "dtend": "Janauary, 01, 2016",
+        "dtend_title": "20160101"
+      }
+    },
+    "fiscal_year_end": "2016",
+    "grant_activity": [""],
+    "grant_program_area": [""],
+    "duration_year": 3
+  }
+}

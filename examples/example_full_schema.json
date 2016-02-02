@@ -1,0 +1,58 @@
+{
+  "hgrant": {
+    "grantor_vcard": {
+        "fn_org": "",
+        "adr": {
+          "locality": "",
+          "region": "",
+          "country_name": ""
+        }
+      },
+    "grantee_vcard": {
+      "org_fn": "",
+      "adr": {
+        "locality": "",
+        "region": "",
+        "country_name": ""
+      }
+    },
+    "grant_id": "",
+    "description": "",
+    "amount": {
+      "amount": 123,
+      "period": {
+        "dtstart": "01/01/2016",
+        "dtstart_title": "20160101",
+        "dtend": "Janauary, 01, 2016",
+        "dtend_title": "20160101"
+      }
+    },
+    "fiscal_year_end": "2016",
+    "duration_year": 3,
+    "grant_activity": [""],
+    "grant_program_area": [""],
+    "geo-focus": [
+      {
+        "continent": "",
+        "inter_country_region": "",
+        "country": "",
+        "intra_country_region": "",
+        "intra_state_region": "",
+        "state": "",
+        "county": "",
+        "city": "",
+        "neighborhood": ""
+      }
+    ],
+    "allocation": {
+      "allocation_currency": "",
+      "allocation_amount": 10000,
+      "allocation_percent": 25,
+      "allocation_type": {
+        "allocation_area": "",
+        "allocation_subject": ""
+      }
+      },
+    "IATI_flag": "y"
+  }
+}
