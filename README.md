@@ -10,18 +10,15 @@ The hGrant spec is currently only publicly available in [PDF format](http://foun
 As the hGrant developer community grows, we wanted to do our part to make it as easy as possible for developers of all sizes to work with the hGrant spec.  
 
 ## Status  
-Under active development *(not yet hGrant compatible)*  
-v0.0.1-alpha  
+Under active development.  
+Current version: v0.1  
 
 ## Usage  
-Main JSON schema file: `hgrant-schema.json`  
+*Detailed usage instructions coming soon.*   
 
-Detailed usage instructions coming soon.
-
-*Note: Explore `quickstart_reference.json` if you're new to the [hGrant spec](http://foundationcenter.org/grantmakers/hgrant.html) and want a quick overview of nesting and required fields.* 
-
-## TODOs  
-Coming soon
+## Roadmap and TODOs  
+Roadmap: See [milestones =>](https://github.com/smartergiving/hgrant-json/milestones)  
+TODOs: See [issues =>](https://github.com/smartergiving/hgrant-json/issues)
 
 ## Contact  
 [opensource@smartergiving.org](mailto:opensource@smartergiving.org)  
