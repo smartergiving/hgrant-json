@@ -283,6 +283,7 @@
           },
           "required": [
             "amount",
+            "amount_title",
             "period"
           ],
           "properties": {
@@ -309,14 +310,13 @@
                 "html_class_name": "amount",
                 "also_has_title_attribute": true,
                 "spec_comments": "<abbr class=\"amount\" title=\"30000\"> 30,000</abbr> This entry, combined with information in field above, will be viewable as £30,000 in the RSS feed."
-              },
-              "amount_title": {
-                "type": "string",
-                "pattern": "([A-Z]{3})",
-                "description": "Title attribute for currency",
-                "formatting_notes": {
-                  "is_title_attribute": true
-                }
+              }
+            },
+            "amount_title": {
+              "type": "number",
+              "description": "Title attribute for amount",
+              "formatting_notes": {
+                "is_title_attribute": true
               }
             },
             "period": {
@@ -484,13 +484,6 @@
             "spec_comments": "Terms within each element should be separated by a comma"
           }
         },
-        "grant_population_area": {
-          "type": "string",
-          "description": "Specific population groups served by the grant. Groups may be identified by gender, age, race and ethnicity, disabilities, etc.",
-          "formatting_notes": {
-            "html_class_name": "grant_population_area"
-          }
-        },
         "grant_program_area": {
           "type": "array",
           "items": {
@@ -545,10 +538,7 @@
         },
         "challenge_grant": {
           "type": "string",
-          "oneOf": [
-            { "pattern": "([A-Z])" },
-            { "pattern": "([A-Z][a-z][a-z])" }
-          ],
+          "pattern": "(Y|Yes|N|No)",
           "description": "If grant is a challenge grant, please indicate \"Y\" or \"Yes.\"",
           "formatting_notes": {
             "html_class_name": "challenge_grant"
@@ -556,10 +546,7 @@
         },
         "matching_grant": {
           "type": "string",
-          "oneOf": [
-            { "pattern": "([A-Z])" },
-            { "pattern": "([A-Z][a-z][a-z])" }
-          ],
+          "pattern": "(Y|Yes|N|No)",
           "description": "If grant is a matching grant, please indicate \"Y\" or \"Yes.\"",
           "formatting_notes": {
             "html_class_name": "matching_grant"
@@ -567,10 +554,7 @@
         },
         "continuing_support_grant": {
           "type": "string",
-          "oneOf": [
-            { "pattern": "([A-Z])" },
-            { "pattern": "([A-Z][a-z][a-z])" }
-          ],
+          "pattern": "(Y|Yes|N|No)",
           "description": "If grant is for continuing support or a grant renewal please indicate \"Y\" or \"Yes.\"",
           "formatting_notes": {
             "html_class_name": "continuing_support_grant"
@@ -723,9 +707,8 @@
               }
             },
             "allocation_amount_title": {
-              "type": "string",
-              "pattern": "([A-Z]{3})",
-              "description": "Title attribute for currency",
+              "type": "number",
+              "description": "Title attribute for allocation_amount_title",
               "formatting_notes": {
                 "is_title_attribute": true
               }
@@ -765,10 +748,7 @@
         },
         "IATI_flag": {
           "type": "string",
-          "oneOf": [
-            { "pattern": "(y)" },
-            { "pattern": "(n)" }
-          ],
+          "pattern": "(y|n)",
           "description": "This field should be used to indicate if you would like the Foundation Center to include your grant in the registry provided to The International Aid Transparency Initiative (IATI), aidtransparency.net, by the Foundation Center. The JSON schema requires boolean, though hGrant spec suggests indicating yes (y) or no (n) on a grant by grant basis. Files received with all blanks or no indication will not be included in the registry. Indicators for IATI will not be displayed in grant details on Glasspockets.org.",
           "formatting_notes": {
             "html_class_name": "IATI_flag"

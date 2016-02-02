@@ -1,25 +1,44 @@
 {
   "hgrant": {
     "grantor_vcard": {
-        "fn_org": "",
-        "adr": {
-          "locality": "",
-          "region": "",
-          "country_name": ""
-        }
+      "fn_org": "",
+      "adr": {
+        "street_address": "",
+        "extended_address": "",
+        "post_office_box": "",
+        "locality": "",
+        "region": "",
+        "postal_code": "",
+        "country_name": ""
       },
+      "tel": "123 5551212",
+      "email": "example@example.com",
+      "url": "https://example.com",
+      "grantor_EIN": ""
+    },
     "grantee_vcard": {
       "org_fn": "",
       "adr": {
+        "street_address": "",
+        "extended_address": "",
+        "post_office_box": "",
         "locality": "",
         "region": "",
+        "postal_code": "",
         "country_name": ""
-      }
+      },
+      "tel": "123 5551212",
+      "email": "example@example.com",
+      "url": "https://example.com"
     },
     "grant_id": "",
+    "title": "",
     "description": "",
     "amount": {
+      "currency": "",
+      "currency_title": "USD",
       "amount": 123,
+      "amount_title": 123,
       "period": {
         "dtstart": "01/01/2016",
         "dtstart_title": "20160101",
@@ -28,9 +47,32 @@
       }
     },
     "fiscal_year_end": "2016",
+    "grantee_unit": "",
+    "grantee_EIN": "",
+    "grantee_aka": "",
+    "grantee_dba": "",
+    "grantee_fka": "",
+    "grantee_type": [""],
+    "grantee_population_group": [""],
     "duration_year": 3,
+    "duration_month": 36,
     "grant_activity": [""],
+    "grant_population_group": [""],
     "grant_program_area": [""],
+    "grant_support_type": "",
+    "strategy": "",
+    "initiative": "",
+    "theme": "",
+    "grant_outcome": "",
+    "grant_outputs": "",
+    "challenge_grant": "N",
+    "matching_grant": "Y",
+    "continuing_support_grant": "Y",
+    "fiscal_agent": "",
+    "shared_grant": "",
+    "fund_name": "",
+    "fund_type": "",
+    "fund_subtype": "",
     "geo-focus": [
       {
         "continent": "",
@@ -46,7 +88,9 @@
     ],
     "allocation": {
       "allocation_currency": "",
+      "allocation_currency_title": "USD",
       "allocation_amount": 10000,
+      "allocation_amount_title": 10000,
       "allocation_percent": 25,
       "allocation_type": {
         "allocation_area": "",
